@@ -21,6 +21,5 @@
       /etc/init.d/php7.4-fpm start
   when:
     - php_enable_php_fpm
-    - php_fpm_state == 'started'
     - not ansible_check_mode
       
