@@ -15,10 +15,10 @@
   when: php_enable_webserver
 
 - name: restart php-fpm
-  ansible.builtin.command:
-    cmd: |
-      /etc/init.d/php7.4-fpm stop
-      /etc/init.d/php7.4-fpm start
+  ansible.builtin.shell: |
+    /etc/init.d/php7.4-fpm stop
+    sleep 1
+    /etc/init.d/php7.4-fpm start
   when:
     - php_enable_php_fpm
     - not ansible_check_mode
